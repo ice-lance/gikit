@@ -1,21 +1,13 @@
-/*
- *    ______                 __
- *   /\__  _\               /\ \
- *   \/_/\ \/     ___     __\ \ \         __      ___     ___     __
- *      \ \ \    / ___\ / __ \ \ \  __  / __ \  /  _  \  / ___\ / __ \
- *       \_\ \__/\ \__//\  __/\ \ \_\ \/\ \_\ \_/\ \/\ \/\ \__//\  __/
- *       /\_____\ \____\ \____\\ \____/\ \__/ \_\ \_\ \_\ \____\ \____\
- *       \/_____/\/____/\/____/ \/___/  \/__/\/_/\/_/\/_/\/____/\/____/
- *
+/***
  * @Author       : ICE
- * @Date         : 2022-03-04 11:53:43
- * @LastEditTime : 2022-03-31 15:57:38
+ * @Date         : 2023-04-20 19:23:14
+ * @LastEditTime : 2023-04-21 16:35:11
  * @LastEditors  : ICE
- * Copyright (c) 2022 ICE, All Rights Reserved.
- * @Description  :
+ * @Copyright (c) 2023 ICE, All Rights Reserved.
+ * @Description  : http返回处理
  */
 
-package httputils
+package http
 
 import (
 	"encoding/json"

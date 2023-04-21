@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func ReadConfigFromFile(path string, obj interface{}) error {
+func ReadConfigFromJson(path string, obj interface{}) error {
 	configFile, err := os.ReadFile(path)
 	if err != nil {
 		return err
@@ -19,4 +19,13 @@ func ReadConfigFromFile(path string, obj interface{}) error {
 		return nil
 	}
 	return errors.New(" empty config ! ")
+}
+
+func ReadConfigFromToml() error {
+
+	return nil
+}
+
+func ReadConfigFromYaml() error {
+	return nil
 }
