@@ -11,6 +11,7 @@ package http
 
 import (
 	"encoding/json"
+	"time"
 )
 
 const (
@@ -29,6 +30,7 @@ func Err_Handler(code int, err error) *JSONResult {
 		Code:    code,
 		Message: err.Error(),
 		Data:    nil,
+		Time:    time.Now().UnixMilli(),
 	}
 }
 
@@ -42,6 +44,7 @@ func Write_Handler(data interface{}) *JSONResult {
 				Code:    JSON_PARSE_ERR,
 				Message: err.Error(),
 				Data:    nil,
+				Time:    time.Now().UnixMilli(),
 			}
 		}
 	} else {
@@ -51,6 +54,7 @@ func Write_Handler(data interface{}) *JSONResult {
 		Code:    200,
 		Message: "",
 		Data:    string(write_data),
+		Time:    time.Now().UnixMilli(),
 	}
 
 }
