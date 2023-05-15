@@ -21,6 +21,7 @@ type JSONResult struct {
 	Code    int         `json:"code" `
 	Message string      `json:"message"`
 	Data    interface{} `json:"data"`
+	Time    int64       `json:"time"`
 }
 
 func Err_Handler(code int, err error) *JSONResult {
