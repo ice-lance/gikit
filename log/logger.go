@@ -75,6 +75,9 @@ func InitLog(level string, fields []zapcore.Field) {
 	logger = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zap.WarnLevel), zap.Fields(fields...))
 
 }
+func GetLogger() *zap.Logger {
+	return logger
+}
 
 func getWriter(filename string) io.Writer {
 	// filename指向最新的日志
