@@ -100,6 +100,12 @@ func Info(format string, v ...interface{}) {
 	logger.Sugar().Infof(format, v...)
 }
 
+// gorm logger
+func Printf(format string, v ...interface{}) {
+	format = "SQL: " + format
+	logger.Sugar().Infof(format, v...)
+}
+
 func Warn(format string, v ...interface{}) {
 	logger.Sugar().Warnf(format, v...)
 }
