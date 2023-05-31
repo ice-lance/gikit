@@ -16,3 +16,4 @@
 logs/
 .vscode/
 go.sum
+.DS_Store
