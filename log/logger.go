@@ -9,6 +9,7 @@
 package log
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"time"
@@ -20,7 +21,10 @@ import (
 
 var logger *zap.Logger
 
-func InitLog(level string, fields []zapcore.Field) {
+func InitLog(level string, log_path string, fields []zapcore.Field) {
+	if log_path == "" {
+		log_path = "./logs"
+	}
 
 	var encoder zapcore.Encoder
 	zapEncoderConfig := zap.NewProductionEncoderConfig()
@@ -62,8 +66,8 @@ func InitLog(level string, fields []zapcore.Field) {
 	})
 
 	// 获取 io.Writer
-	infoWriter := getWriter("./logs/info.log")
-	warnWriter := getWriter("./logs/error.log")
+	infoWriter := getWriter(fmt.Sprintf("%s/info.log", log_path))
+	warnWriter := getWriter(fmt.Sprintf("%s/error.log", log_path))
 
 	// 指向输出
 	core := zapcore.NewTee(
